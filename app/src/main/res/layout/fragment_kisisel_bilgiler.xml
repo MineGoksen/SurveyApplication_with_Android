@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    <TextView
+        android:id="@+id/textAd"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="E-posta Giriniz"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:hint="Telefon Giriniz"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/customButon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.onNextClick()}"
+        android:text="Sonraki Sayfa"
+        tools:ignore="MissingConstraints" />
+
+
+</LinearLayout>

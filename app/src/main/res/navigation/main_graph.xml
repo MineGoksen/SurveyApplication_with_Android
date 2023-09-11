@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.minegksn.odev1.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/homeTokisisel"
+            app:destination="@id/kisiselBilgiler"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/kisiselBilgiler"
+        android:name="com.minegksn.odev1.ui.KisiselBilgiler"
+        android:label="fragment_kisisel_bilgiler"
+        tools:layout="@layout/fragment_kisisel_bilgiler" >
+        <action
+            android:id="@+id/kisiselToCustom"
+            app:destination="@id/custom" />
+        <argument
+            android:name="adSoyad"
+            app:argType="com.minegksn.odev1.data.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/custom"
+        android:name="com.minegksn.odev1.ui.Custom"
+        android:label="fragment_custom"
+        tools:layout="@layout/fragment_custom" >
+        <action
+            android:id="@+id/customToSonuc"
+            app:destination="@id/sonuc" />
+        <argument
+            android:name="info"
+            app:argType="com.minegksn.odev1.data.User" />
+        <argument
+            android:name="mailphone"
+            app:argType="com.minegksn.odev1.data.Personal" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonuc"
+        android:name="com.minegksn.odev1.ui.Sonuc"
+        android:label="fragment_sonuc"
+        tools:layout="@layout/fragment_sonuc" >
+        <argument
+            android:name="yuzme"
+            app:argType="com.minegksn.odev1.data.Anket" />
+        <argument
+            android:name="bilgiler"
+            app:argType="com.minegksn.odev1.data.Personal" />
+        <argument
+            android:name="isim"
+            app:argType="com.minegksn.odev1.data.User" />
+    </fragment>
+</navigation>
